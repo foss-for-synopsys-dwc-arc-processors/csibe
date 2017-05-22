@@ -1,0 +1,12 @@
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR Cortex-R5)
+
+set(CMAKE_C_COMPILER_WORKS 1)
+set(CMAKE_CXX_COMPILER_WORKS 1)
+
+set(CMAKE_C_COMPILER arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
+
+set(CORTEX_R5_FLAGS "-Os -mcpu=cortex-r5 -mtune=cortex-r5 -mthumb")
+set(CMAKE_C_FLAGS "${CORTEX_R5_FLAGS}" CACHE STRING "" FORCE)
+set(CMAKE_CXX_FLAGS "${CORTEX_R5_FLAGS}" CACHE STRING "" FORCE)
