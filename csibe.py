@@ -7,6 +7,7 @@ import sys
 import tarfile
 import textwrap
 import urllib2
+import ssl
 
 class CSiBEBuilder(object):
 
@@ -125,7 +126,10 @@ def download_old_testbed(version):
             os.makedirs(old_csibe_dirname)
 
         sys.stdout.write("Downloading {}...\n".format(version))
-        response = urllib2.urlopen("https://github.com/szeged/csibe/releases/download/CSiBE-v2.1.1/CSiBE-v2.1.1.tar.gz")
+	ctx = ssl.create_default_context()
+	ctx.check_hostname = False
+	ctx.verify_mode = ssl.CERT_NONE
+        response = urllib2.urlopen("https://github.com/szeged/csibe/releases/download/CSiBE-v2.1.1/CSiBE-v2.1.1.tar.gz", context = ctx)
         response_data = response.read()
 
         with open(old_csibe_tar_filepath, "wb") as code:
