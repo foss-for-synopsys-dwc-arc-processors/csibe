@@ -29,8 +29,6 @@ function(adopt_subprojects)
                 CSiBE-v2.1.1/compiler
                 CSiBE-v2.1.1/flex-2.5.31
                 CSiBE-v2.1.1/jikespg-1.3
-                CSiBE-v2.1.1/jpeg-6b
-                CSiBE-v2.1.1/libmspack
                 CSiBE-v2.1.1/libpng-1.2.5
                 CSiBE-v2.1.1/lwip-0.5.3.preproc
                 CSiBE-v2.1.1/mpeg2dec-0.3.1
@@ -41,6 +39,11 @@ function(adopt_subprojects)
                 CSiBE-v2.1.1/ttt-0.10.1.preproc
                 CSiBE-v2.1.1/unrarlib-0.4.0
                 CSiBE-v2.1.1/zlib-1.1.4)
+        if("${CMAKE_SIZEOF_VOID_P}" STREQUAL "4")
+            list(APPEND SUBPROJECTS
+                CSiBE-v2.1.1/jpeg-6b
+                CSiBE-v2.1.1/libmspack)
+        endif()
         set(SUBPROJECTS ${SUBPROJECTS} PARENT_SCOPE)
         set(OLD_CSIBE_BASE_DIR ${CSiBE_SRC_DIR}/CSiBE-v2.1.1 PARENT_SCOPE)
     endif()
