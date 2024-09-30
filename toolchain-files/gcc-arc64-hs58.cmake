@@ -7,6 +7,6 @@ set(CMAKE_CXX_COMPILER_WORKS 1)
 set(CMAKE_C_COMPILER arc64-elf-gcc)
 set(CMAKE_CXX_COMPILER arc64-elf-g++)
 
-set(ARC_HS_FLAGS "-Os -mcpu=hs58")
+set(ARC_HS_FLAGS "-Os -mcpu=hs58 -Wno-implicit")
 set(CMAKE_C_FLAGS "${ARC_HS_FLAGS}" CACHE STRING "" FORCE)
 set(CMAKE_CXX_FLAGS "${ARC_HS_FLAGS}" CACHE STRING "" FORCE)

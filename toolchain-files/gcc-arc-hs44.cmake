@@ -7,6 +7,6 @@ set(CMAKE_CXX_COMPILER_WORKS 1)
 set(CMAKE_C_COMPILER arc-elf32-gcc)
 set(CMAKE_CXX_COMPILER arc-elf32-g++)
 
-set(ARC_HS_FLAGS "-Os -mcpu=hs4x -mtune=core3")
+set(ARC_HS_FLAGS "-Os -mcpu=hs4x -mtune=core3 -Wno-implicit")
 set(CMAKE_C_FLAGS "${ARC_HS_FLAGS}" CACHE STRING "" FORCE)
 set(CMAKE_CXX_FLAGS "${ARC_HS_FLAGS}" CACHE STRING "" FORCE)
